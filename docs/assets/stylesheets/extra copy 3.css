@@ -128,7 +128,7 @@ pre {
 
 .md-typeset h1 {
   border-bottom: 1px solid var(--nb-line);
-  font-size: clamp(1.5rem, 2vw, 1.9rem);
+  font-size: clamp(1.55rem, 2.35vw, 2.15rem);
   font-weight: 760;
   line-height: 1.14;
   margin-bottom: 1rem;
@@ -211,12 +211,6 @@ pre {
   background-color: #323232;
 }
 
-/* Smaller light/dark palette toggle icon */
-.md-header__option .md-header__button svg {
-  height: 0.9rem;
-  width: 0.9rem;
-}
-
 .md-tabs {
   background: #222222;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -254,8 +248,6 @@ pre {
   background: var(--nb-bg);
 }
 
-/* Layout: Material's default centered grid (max-width 61rem), matching
-   https://nicobit.github.io/brs-to-spec/ — no full-width overrides. */
 .md-content__inner {
   margin-top: 1.15rem;
 }
@@ -634,19 +626,15 @@ pre {
   font-weight: 720;
 }
 
-/* Button text uses --nb-paper (white in light schemes, near-black in dark
-   schemes where the accent itself is bright) so it stays readable on the
-   accent fill in every theme. */
 .md-typeset .md-button--primary {
   background-color: var(--nb-ubs-red);
   border-color: var(--nb-ubs-red);
-  color: var(--nb-paper);
+  color: #ffffff;
 }
 
 .md-typeset .md-button--primary:hover {
   background-color: var(--nb-ubs-red-dark);
   border-color: var(--nb-ubs-red-dark);
-  color: var(--nb-paper);
 }
 
 .md-typeset .md-button:not(.md-button--primary) {
@@ -654,11 +642,7 @@ pre {
   color: var(--nb-black);
 }
 
-/* Own the hover background too: Material would otherwise fill the button
-   with the accent color while the text stays accent-dark (unreadable). */
-.md-typeset .md-button:not(.md-button--primary):hover,
-.md-typeset .md-button:not(.md-button--primary):focus {
-  background-color: var(--nb-ubs-red-soft);
+.md-typeset .md-button:not(.md-button--primary):hover {
   border-color: var(--nb-ubs-red-line);
   color: var(--nb-ubs-red-deep);
 }
@@ -673,6 +657,7 @@ pre {
 
 .md-footer-meta {
   background: #111111;
+  border-top: 2px solid var(--nb-ubs-red);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -707,102 +692,6 @@ pre {
   .md-typeset h2 {
     font-size: 1.18rem;
   }
-}
-
-/* -------------------------------------------------------------------------- */
-/* Theme switcher dropdown (injected by theme-switcher.js)                      */
-/* Uses --nb-* variables so it adapts to whichever design theme is active.     */
-/* -------------------------------------------------------------------------- */
-
-.nb-theme-picker {
-  align-items: center;
-  display: flex;
-  margin: 0 0.2rem;
-  position: relative;
-}
-
-.nb-theme-picker__button {
-  align-items: center;
-  background: transparent;
-  border: 0;
-  border-radius: 7px;
-  color: inherit;
-  cursor: pointer;
-  display: flex;
-  font: inherit;
-  font-size: 0.65rem;
-  font-weight: 650;
-  gap: 0.3rem;
-  padding: 0.28rem 0.45rem;
-}
-
-.nb-theme-picker__button:hover {
-  background: color-mix(in srgb, currentColor 12%, transparent);
-}
-
-.nb-theme-picker__button svg {
-  fill: currentColor;
-  height: 0.85rem;
-  width: 0.85rem;
-}
-
-.nb-theme-picker__menu {
-  background: var(--nb-surface);
-  border: 1px solid var(--nb-line-strong);
-  border-radius: 9px;
-  display: none;
-  min-width: 8.5rem;
-  padding: 0.22rem;
-  position: absolute;
-  right: 0;
-  top: calc(100% + 0.35rem);
-  z-index: 20;
-}
-
-.nb-theme-picker--open .nb-theme-picker__menu {
-  display: block;
-}
-
-.nb-theme-picker__item {
-  align-items: center;
-  background: none;
-  border: 0;
-  border-radius: 6px;
-  color: var(--nb-text);
-  cursor: pointer;
-  display: flex;
-  font: inherit;
-  font-size: 0.66rem;
-  font-weight: 600;
-  gap: 0.6rem;
-  justify-content: space-between;
-  padding: 0.38rem 0.55rem;
-  text-align: left;
-  width: 100%;
-}
-
-.nb-theme-picker__item:hover {
-  background: var(--nb-surface-alt);
-  color: var(--nb-black);
-}
-
-.nb-theme-picker__item[aria-checked="true"] {
-  color: var(--nb-ubs-red);
-}
-
-.nb-theme-picker__check {
-  display: flex;
-  visibility: hidden;
-}
-
-.nb-theme-picker__check svg {
-  fill: currentColor;
-  height: 0.7rem;
-  width: 0.7rem;
-}
-
-.nb-theme-picker__item[aria-checked="true"] .nb-theme-picker__check {
-  visibility: visible;
 }
 
 /* -------------------------------------------------------------------------- */

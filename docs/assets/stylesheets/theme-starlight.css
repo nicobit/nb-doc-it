@@ -1,0 +1,295 @@
+/*
+ * Starlight design theme (ASP.NET Aspire docs look).
+ * Active only when <html data-nb-theme="starlight"> is set by the theme
+ * switcher. Every rule is scoped under that attribute so the other themes
+ * are untouched.
+ *
+ * Look: Astro Starlight as used by aspire.dev — .NET purple (#512bd4)
+ * accent, purple→magenta gradient display text, solid accent pill on the
+ * active sidebar item, quiet bordered header, #17181c dark canvas.
+ */
+
+/* -------------------------------------------------------------------------- */
+/* Variable remap — light                                                      */
+/* -------------------------------------------------------------------------- */
+
+html[data-nb-theme="starlight"] {
+  --nb-black: #17181c;
+  --nb-charcoal: #23262f;
+  --nb-text: #3f4451;
+  --nb-muted: #6b7280;
+  --nb-subtle: #9ca3af;
+
+  /* Accent slots keep their names; values become .NET purple */
+  --nb-ubs-red: #512bd4;
+  --nb-ubs-red-dark: #4622b7;
+  --nb-ubs-red-deep: #3c1e9b;
+  --nb-ubs-red-soft: rgba(81, 43, 212, 0.08);
+  --nb-ubs-red-line: rgba(81, 43, 212, 0.3);
+
+  --nb-bg: #ffffff;
+  --nb-surface: #ffffff;
+  --nb-surface-alt: #f5f6f8;
+  --nb-line: rgba(23, 24, 28, 0.1);
+  --nb-line-strong: rgba(23, 24, 28, 0.17);
+
+  --nb-radius: 8px;
+  --nb-radius-lg: 12px;
+  --nb-shadow: 0 8px 24px rgba(23, 24, 28, 0.07);
+  --nb-shadow-soft: 0 3px 10px rgba(23, 24, 28, 0.05);
+
+  --nb-mist: #eceef2;
+  --nb-paper: #ffffff;
+  --nb-ice: #f5f6f8;
+  --nb-cyan: var(--nb-ubs-red);
+  --nb-cyan-soft: var(--nb-ubs-red-soft);
+  --nb-blue: var(--nb-ubs-red-deep);
+  --nb-navy: var(--nb-black);
+  --nb-slate: var(--nb-text);
+  --nb-steel: var(--nb-muted);
+  --nb-glow: #ffffff;
+}
+
+[data-nb-theme="starlight"] [data-md-color-scheme="default"] {
+  --md-primary-fg-color: #ffffff;
+  --md-primary-fg-color--light: #f5f6f8;
+  --md-primary-fg-color--dark: #eceef2;
+  --md-accent-fg-color: #512bd4;
+  --md-default-fg-color: #23262f;
+  --md-default-fg-color--light: #6b7280;
+  --md-default-bg-color: #ffffff;
+  --md-typeset-a-color: #512bd4;
+  --md-footer-bg-color: #ffffff;
+  --md-footer-bg-color--dark: #f5f6f8;
+  --md-footer-fg-color: #17181c;
+  --md-footer-fg-color--light: #6b7280;
+  --md-footer-fg-color--lighter: #9ca3af;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Variable remap — dark (Starlight's #17181c canvas)                          */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="starlight"] [data-md-color-scheme="slate"] {
+  --nb-black: #f2f3f8;
+  --nb-charcoal: #e0e2ea;
+  --nb-text: #c9cdd8;
+  --nb-muted: #9aa0b2;
+  --nb-subtle: #7b8092;
+
+  --nb-ubs-red: #a78bff;
+  --nb-ubs-red-dark: #b8a1ff;
+  --nb-ubs-red-deep: #c4b5fd;
+  --nb-ubs-red-soft: rgba(167, 139, 255, 0.12);
+  --nb-ubs-red-line: rgba(167, 139, 255, 0.32);
+
+  --nb-bg: #17181c;
+  --nb-surface: #1e2028;
+  --nb-surface-alt: #262933;
+  --nb-line: rgba(242, 243, 248, 0.1);
+  --nb-line-strong: rgba(242, 243, 248, 0.17);
+
+  --nb-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  --nb-shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.28);
+
+  --nb-mist: #2c2f3a;
+  --nb-paper: #1e2028;
+  --nb-ice: #262933;
+  --nb-cyan: var(--nb-ubs-red);
+  --nb-cyan-soft: var(--nb-ubs-red-soft);
+  --nb-blue: var(--nb-ubs-red-deep);
+  --nb-navy: var(--nb-black);
+  --nb-slate: var(--nb-text);
+  --nb-steel: var(--nb-muted);
+  --nb-glow: #1e2028;
+
+  --md-primary-fg-color: #17181c;
+  --md-primary-fg-color--light: #1e2028;
+  --md-primary-fg-color--dark: #101114;
+  --md-accent-fg-color: #a78bff;
+  --md-default-fg-color: #e0e2ea;
+  --md-default-fg-color--light: #9aa0b2;
+  --md-default-bg-color: #17181c;
+  --md-typeset-a-color: #a78bff;
+  --md-footer-bg-color: #17181c;
+  --md-footer-bg-color--dark: #101114;
+  --md-footer-fg-color: #e0e2ea;
+  --md-footer-fg-color--light: #9aa0b2;
+  --md-footer-fg-color--lighter: #7b8092;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Typography                                                                  */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="starlight"] body,
+[data-nb-theme="starlight"] input {
+  font-family: -apple-system, "Segoe UI Variable", "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+[data-nb-theme="starlight"] .md-typeset {
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+[data-nb-theme="starlight"] .md-typeset h1,
+[data-nb-theme="starlight"] .md-typeset h2,
+[data-nb-theme="starlight"] .md-typeset h3,
+[data-nb-theme="starlight"] .hero-title {
+  font-family: -apple-system, "Segoe UI Variable", "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.015em;
+}
+
+/* Starlight headings: plain bold, no rules, no ticks */
+[data-nb-theme="starlight"] .md-typeset h1 {
+  border-bottom: none;
+  font-weight: 700;
+  padding-bottom: 0;
+}
+
+[data-nb-theme="starlight"] .md-typeset h2 {
+  border-top: none;
+  font-weight: 700;
+  padding-top: 0;
+}
+
+[data-nb-theme="starlight"] .md-typeset h2::before {
+  display: none;
+}
+
+[data-nb-theme="starlight"] .md-typeset a {
+  font-weight: 500;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Header / tabs / search                                                      */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="starlight"] .md-header {
+  background: var(--nb-bg);
+  border-bottom: 1px solid var(--nb-line);
+  box-shadow: none;
+  color: var(--nb-black);
+}
+
+[data-nb-theme="starlight"] .md-search__form {
+  background-color: var(--nb-surface-alt);
+  border: 1px solid var(--nb-line-strong);
+  border-radius: 8px;
+}
+
+[data-nb-theme="starlight"] .md-search__form:hover {
+  background-color: var(--nb-mist);
+}
+
+[data-nb-theme="starlight"] .md-search__input {
+  color: var(--nb-black);
+}
+
+[data-nb-theme="starlight"] .md-search__input::placeholder,
+[data-nb-theme="starlight"] .md-search__icon {
+  color: var(--nb-muted);
+}
+
+[data-nb-theme="starlight"] .md-tabs {
+  background: var(--nb-bg);
+  border-bottom: 1px solid var(--nb-line);
+}
+
+[data-nb-theme="starlight"] .md-tabs__link {
+  color: var(--nb-muted);
+}
+
+[data-nb-theme="starlight"] .md-tabs__link:hover,
+[data-nb-theme="starlight"] .md-tabs__link--active,
+[data-nb-theme="starlight"] .md-tabs__item--active .md-tabs__link {
+  color: var(--nb-black);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Sidebar: Starlight's solid accent pill on the active item                   */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="starlight"] .md-nav__link {
+  border-radius: 7px;
+  padding: 0.24rem 0.45rem;
+}
+
+[data-nb-theme="starlight"] .md-nav__link:hover {
+  background: var(--nb-surface-alt);
+  color: var(--nb-black);
+}
+
+[data-nb-theme="starlight"] .md-nav__link--active,
+[data-nb-theme="starlight"] .md-nav__item--active > .md-nav__link {
+  background: var(--nb-ubs-red);
+  color: var(--nb-bg);
+}
+
+[data-nb-theme="starlight"] .md-nav__link--active:hover,
+[data-nb-theme="starlight"] .md-nav__item--active > .md-nav__link:hover {
+  background: var(--nb-ubs-red-dark);
+  color: var(--nb-bg);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Content components                                                          */
+/* -------------------------------------------------------------------------- */
+
+/* Aspire signature: purple→magenta gradient display text */
+[data-nb-theme="starlight"] .hero-title {
+  background: linear-gradient(90deg, #512bd4 0%, #c724b1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+[data-nb-theme="starlight"] [data-md-color-scheme="slate"] .hero-title {
+  background: linear-gradient(90deg, #a78bff 0%, #ff7ee2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+[data-nb-theme="starlight"] .hero-panel {
+  border-top: 3px solid var(--nb-ubs-red);
+}
+
+/* Plain cards, no accent dots */
+[data-nb-theme="starlight"] .hero-action::before,
+[data-nb-theme="starlight"] .section-card::before,
+[data-nb-theme="starlight"] .signal-card::before,
+[data-nb-theme="starlight"] .mini-card::before {
+  display: none;
+}
+
+[data-nb-theme="starlight"] .md-typeset table:not([class]) th {
+  background: var(--nb-surface-alt);
+  border-bottom: 1px solid var(--nb-line-strong);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+[data-nb-theme="starlight"] .md-typeset code {
+  color: var(--nb-charcoal);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Footer                                                                      */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="starlight"] .md-footer {
+  background: var(--md-footer-bg-color);
+  border-top: 1px solid var(--nb-line);
+}
+
+[data-nb-theme="starlight"] .md-footer-meta {
+  background: var(--md-footer-bg-color--dark);
+  border-top: 1px solid var(--nb-line);
+}

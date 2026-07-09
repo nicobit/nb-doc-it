@@ -1,0 +1,291 @@
+/*
+ * Docusaurus design theme.
+ * Active only when <html data-nb-theme="docusaurus"> is set by the theme
+ * switcher. Every rule is scoped under that attribute so the other themes
+ * are untouched.
+ *
+ * Look: Docusaurus "classic" / Infima — white navbar with a soft shadow,
+ * green primary (#2e8555, teal #25c2a0 in dark mode), system font stack,
+ * rounded menu items, dark #303846 footer in both schemes.
+ */
+
+/* -------------------------------------------------------------------------- */
+/* Variable remap — light                                                      */
+/* -------------------------------------------------------------------------- */
+
+html[data-nb-theme="docusaurus"] {
+  --nb-black: #1c1e21;
+  --nb-charcoal: #2f3337;
+  --nb-text: #444950;
+  --nb-muted: #525860;
+  --nb-subtle: #8d949e;
+
+  /* Accent slots keep their names; values become Docusaurus green */
+  --nb-ubs-red: #2e8555;
+  --nb-ubs-red-dark: #29784c;
+  --nb-ubs-red-deep: #277148;
+  --nb-ubs-red-soft: rgba(46, 133, 85, 0.1);
+  --nb-ubs-red-line: rgba(46, 133, 85, 0.32);
+
+  --nb-bg: #ffffff;
+  --nb-surface: #ffffff;
+  --nb-surface-alt: #f5f6f7;
+  --nb-line: #dadde1;
+  --nb-line-strong: #ccd0d5;
+
+  --nb-radius: 8px;
+  --nb-radius-lg: 10px;
+  --nb-shadow: 0 5px 40px rgba(0, 0, 0, 0.1);
+  --nb-shadow-soft: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+
+  --nb-mist: #ebedf0;
+  --nb-paper: #ffffff;
+  --nb-ice: #f5f6f7;
+  --nb-cyan: var(--nb-ubs-red);
+  --nb-cyan-soft: var(--nb-ubs-red-soft);
+  --nb-blue: var(--nb-ubs-red-deep);
+  --nb-navy: var(--nb-black);
+  --nb-slate: var(--nb-text);
+  --nb-steel: var(--nb-muted);
+  --nb-glow: #ffffff;
+}
+
+[data-nb-theme="docusaurus"] [data-md-color-scheme="default"] {
+  --md-primary-fg-color: #ffffff;
+  --md-primary-fg-color--light: #f5f6f7;
+  --md-primary-fg-color--dark: #ebedf0;
+  --md-accent-fg-color: #2e8555;
+  --md-default-fg-color: #1c1e21;
+  --md-default-fg-color--light: #525860;
+  --md-default-bg-color: #ffffff;
+  --md-typeset-a-color: #2e8555;
+  /* Docusaurus keeps a dark footer even in light mode */
+  --md-footer-bg-color: #303846;
+  --md-footer-bg-color--dark: #2b323f;
+  --md-footer-fg-color: #ebedf0;
+  --md-footer-fg-color--light: rgba(235, 237, 240, 0.75);
+  --md-footer-fg-color--lighter: rgba(235, 237, 240, 0.5);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Variable remap — dark                                                       */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="docusaurus"] [data-md-color-scheme="slate"] {
+  --nb-black: #e3e3e3;
+  --nb-charcoal: #d4d7da;
+  --nb-text: #c6c9cd;
+  --nb-muted: #a0a4ab;
+  --nb-subtle: #81868e;
+
+  --nb-ubs-red: #25c2a0;
+  --nb-ubs-red-dark: #29d5b0;
+  --nb-ubs-red-deep: #4fddbf;
+  --nb-ubs-red-soft: rgba(37, 194, 160, 0.12);
+  --nb-ubs-red-line: rgba(37, 194, 160, 0.34);
+
+  --nb-bg: #1b1b1d;
+  --nb-surface: #242526;
+  --nb-surface-alt: #2a2b2d;
+  --nb-line: rgba(227, 227, 227, 0.12);
+  --nb-line-strong: rgba(227, 227, 227, 0.2);
+
+  --nb-shadow: 0 5px 40px rgba(0, 0, 0, 0.4);
+  --nb-shadow-soft: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+
+  --nb-mist: #2e2f31;
+  --nb-paper: #242526;
+  --nb-ice: #2a2b2d;
+  --nb-cyan: var(--nb-ubs-red);
+  --nb-cyan-soft: var(--nb-ubs-red-soft);
+  --nb-blue: var(--nb-ubs-red-deep);
+  --nb-navy: var(--nb-black);
+  --nb-slate: var(--nb-text);
+  --nb-steel: var(--nb-muted);
+  --nb-glow: #242526;
+
+  --md-primary-fg-color: #242526;
+  --md-primary-fg-color--light: #2a2b2d;
+  --md-primary-fg-color--dark: #1b1b1d;
+  --md-accent-fg-color: #25c2a0;
+  --md-default-fg-color: #e3e3e3;
+  --md-default-fg-color--light: #a0a4ab;
+  --md-default-bg-color: #1b1b1d;
+  --md-typeset-a-color: #25c2a0;
+  --md-footer-bg-color: #242526;
+  --md-footer-bg-color--dark: #1b1b1d;
+  --md-footer-fg-color: #e3e3e3;
+  --md-footer-fg-color--light: #a0a4ab;
+  --md-footer-fg-color--lighter: #81868e;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Typography                                                                  */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="docusaurus"] body,
+[data-nb-theme="docusaurus"] input {
+  font-family: -apple-system, "Segoe UI Variable", "Segoe UI", Roboto, Ubuntu,
+    Cantarell, "Helvetica Neue", Arial, sans-serif;
+}
+
+[data-nb-theme="docusaurus"] .md-typeset {
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+[data-nb-theme="docusaurus"] .md-typeset h1,
+[data-nb-theme="docusaurus"] .md-typeset h2,
+[data-nb-theme="docusaurus"] .md-typeset h3,
+[data-nb-theme="docusaurus"] .hero-title {
+  font-family: -apple-system, "Segoe UI Variable", "Segoe UI", Roboto, Ubuntu,
+    Cantarell, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Infima headings: plain bold, no rules, no ticks */
+[data-nb-theme="docusaurus"] .md-typeset h1 {
+  border-bottom: none;
+  font-weight: 700;
+  padding-bottom: 0;
+}
+
+[data-nb-theme="docusaurus"] .md-typeset h2 {
+  border-top: none;
+  font-weight: 700;
+  padding-top: 0;
+}
+
+[data-nb-theme="docusaurus"] .md-typeset h2::before {
+  display: none;
+}
+
+[data-nb-theme="docusaurus"] .md-typeset a {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+[data-nb-theme="docusaurus"] .md-typeset a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Header / tabs / search                                                      */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="docusaurus"] .md-header {
+  background: var(--nb-surface);
+  border-bottom: none;
+  box-shadow: var(--nb-shadow-soft);
+  color: var(--nb-black);
+}
+
+[data-nb-theme="docusaurus"] .md-search__form {
+  background-color: var(--nb-surface-alt);
+  border: 1px solid var(--nb-line);
+  border-radius: 999px; /* Docusaurus pill search */
+}
+
+[data-nb-theme="docusaurus"] .md-search__form:hover {
+  background-color: var(--nb-mist);
+}
+
+[data-nb-theme="docusaurus"] .md-search__input {
+  color: var(--nb-black);
+}
+
+[data-nb-theme="docusaurus"] .md-search__input::placeholder,
+[data-nb-theme="docusaurus"] .md-search__icon {
+  color: var(--nb-muted);
+}
+
+[data-nb-theme="docusaurus"] .md-tabs {
+  background: var(--nb-surface);
+  border-bottom: 1px solid var(--nb-line);
+}
+
+[data-nb-theme="docusaurus"] .md-tabs__link {
+  color: var(--nb-text);
+}
+
+[data-nb-theme="docusaurus"] .md-tabs__link:hover,
+[data-nb-theme="docusaurus"] .md-tabs__link--active,
+[data-nb-theme="docusaurus"] .md-tabs__item--active .md-tabs__link {
+  color: var(--nb-ubs-red);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Sidebar: Infima menu items                                                  */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="docusaurus"] .md-nav__link {
+  border-radius: 6px;
+  padding: 0.24rem 0.4rem;
+}
+
+[data-nb-theme="docusaurus"] .md-nav__link:hover {
+  background: var(--nb-surface-alt);
+  color: var(--nb-black);
+}
+
+[data-nb-theme="docusaurus"] .md-nav__link--active,
+[data-nb-theme="docusaurus"] .md-nav__item--active > .md-nav__link {
+  background: var(--nb-ubs-red-soft);
+  color: var(--nb-ubs-red);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Content components                                                          */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="docusaurus"] .hero-panel {
+  border-top: 1px solid var(--nb-line);
+  box-shadow: var(--nb-shadow-soft);
+}
+
+/* Plain cards, no accent dots */
+[data-nb-theme="docusaurus"] .hero-action::before,
+[data-nb-theme="docusaurus"] .section-card::before,
+[data-nb-theme="docusaurus"] .signal-card::before,
+[data-nb-theme="docusaurus"] .mini-card::before {
+  display: none;
+}
+
+[data-nb-theme="docusaurus"] .hero-action,
+[data-nb-theme="docusaurus"] .section-card,
+[data-nb-theme="docusaurus"] .signal-card,
+[data-nb-theme="docusaurus"] .mini-card {
+  box-shadow: var(--nb-shadow-soft);
+}
+
+[data-nb-theme="docusaurus"] .md-typeset table:not([class]) th {
+  background: var(--nb-surface-alt);
+  border-bottom: 2px solid var(--nb-line-strong);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+[data-nb-theme="docusaurus"] .md-typeset code {
+  color: var(--nb-charcoal);
+}
+
+/* Infima admonitions: thicker left border */
+[data-nb-theme="docusaurus"] .md-typeset .admonition,
+[data-nb-theme="docusaurus"] .md-typeset details {
+  border-left-width: 5px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Footer: dark in both schemes, no accent border                              */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="docusaurus"] .md-footer {
+  background: var(--md-footer-bg-color);
+}
+
+[data-nb-theme="docusaurus"] .md-footer-meta {
+  background: var(--md-footer-bg-color--dark);
+  border-top: none;
+}

@@ -1,20 +1,18 @@
 ---
 owner: "QA Lead"
 status: "draft"
-last_review_date: "2026-06-25"
-next_review_date: "2026-12-25"
+last_review_date: "2026-07-10"
+next_review_date: "2027-01-10"
 classification: "internal"
 criticality: "high"
 ---
 
-# Test Environments and Mock Data
+# Test Data and Mocks
 
-## QA Environment Access
-
-| Environment | URL | Purpose | Access request |
-|---|---|---|---|
-| QA | _URL_ | Functional and regression testing | _Process or link_ |
-| UAT | _URL_ | Business acceptance testing | _Process or link_ |
+Environment facts (URLs, owners, deploy triggers, access) live in the
+[Environment Registry](../engineering/environments.md) — they are deliberately
+not repeated here. This page covers what QA owns: test accounts, test data,
+and integration stubs.
 
 ## Test User Accounts
 
@@ -47,5 +45,6 @@ _Describe how to seed or reset test data in QA environments._
 
 ## Related
 
-- [Environments and Deployment](../engineering/environments.md) — full environment overview
+- [Environment Registry](../engineering/environments.md) — URLs, owners, deploy triggers, access
 - [QA Strategy](strategy.md) — testing approach and coverage targets
+- [Smoke Test Procedure](../operations/sops/smoke-test.md) — uses the test accounts above

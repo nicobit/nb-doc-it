@@ -15,16 +15,10 @@ Use this area for recurring team procedures that need clear, repeatable steps.
 
 | SOP | Owner | Last reviewed |
 |---|---|---|
-| _Example: Release execution steps_ | _Release manager_ | _Date_ |
-| _Example: Smoke test procedure_ | _QA Lead_ | _Date_ |
-
-## Typical SOPs
-
-- Release execution steps
-- Smoke test procedures
-- Access review steps
-- Validation checklists
-- Support handoff routines
+| [Release Execution](release-execution.md) | Release Manager | 2026-07-09 |
+| [Smoke Test Procedure](smoke-test.md) | QA Lead | 2026-07-09 |
+| [Quarterly Access Review](access-review.md) | Operations Lead | 2026-07-09 |
+| [Support Handoff](support-handoff.md) | Support Lead | 2026-07-09 |
 
 Keep incident-specific recovery actions in [Runbooks](../runbooks/index.md).
 

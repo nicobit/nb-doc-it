@@ -1,0 +1,309 @@
+/*
+ * Sapphire design theme.
+ * Active only when <html data-nb-theme="sapphire"> is set by the theme
+ * switcher. Every rule is scoped under that attribute so the other themes
+ * are untouched.
+ *
+ * Look: ported from the brs-to-spec site — navy + teal (#0f766e) accents,
+ * blue (#1d4ed8) links, gradient header ending in teal, glassy white cards
+ * with large radii and soft floating shadows, gradient hero panel with a
+ * decorative circle. The original is light-only; the dark scheme here is a
+ * matching navy composition.
+ */
+
+/* -------------------------------------------------------------------------- */
+/* Variable remap — light                                                      */
+/* -------------------------------------------------------------------------- */
+
+html[data-nb-theme="sapphire"] {
+  --nb-black: #0f172a;
+  --nb-charcoal: #1e293b;
+  --nb-text: #334155;
+  --nb-muted: #5b6b84;
+  --nb-subtle: #94a3b8;
+
+  /* Two-accent design: teal for accents, blue for links (the -deep slot) */
+  --nb-ubs-red: #0f766e;
+  --nb-ubs-red-dark: #0d5f58;
+  --nb-ubs-red-deep: #1d4ed8;
+  --nb-ubs-red-soft: rgba(15, 118, 110, 0.09);
+  --nb-ubs-red-line: rgba(29, 78, 216, 0.25);
+
+  --nb-bg: #f6f8fb;
+  --nb-surface: #ffffff;
+  --nb-surface-alt: #f4f7fb;
+  --nb-line: rgba(15, 23, 42, 0.1);
+  --nb-line-strong: rgba(15, 23, 42, 0.18);
+
+  --nb-radius: 18px;
+  --nb-radius-lg: 28px;
+  --nb-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+  --nb-shadow-soft: 0 10px 24px rgba(15, 23, 42, 0.06);
+
+  --nb-mist: #e2e8f0;
+  --nb-paper: #f8fafc;
+  --nb-ice: #eef6fb;
+  --nb-cyan: #0f766e;
+  --nb-cyan-soft: #dff6f3;
+  --nb-blue: #1d4ed8;
+  --nb-navy: var(--nb-black);
+  --nb-slate: var(--nb-text);
+  --nb-steel: var(--nb-muted);
+  --nb-glow: linear-gradient(135deg, #eff6ff 0%, #ecfeff 45%, #f8fafc 100%);
+}
+
+[data-nb-theme="sapphire"] [data-md-color-scheme="default"] {
+  --md-primary-fg-color: #12304a;
+  --md-primary-fg-color--light: #1f4f73;
+  --md-primary-fg-color--dark: #0b2235;
+  --md-accent-fg-color: #0f766e;
+  --md-default-fg-color: #1e293b;
+  --md-default-fg-color--light: #475569;
+  --md-default-bg-color: #f6f8fb;
+  --md-typeset-a-color: #1d4ed8;
+  --md-footer-bg-color: #12304a;
+  --md-footer-bg-color--dark: #0b2235;
+  --md-footer-fg-color: #eef2f7;
+  --md-footer-fg-color--light: rgba(238, 242, 247, 0.75);
+  --md-footer-fg-color--lighter: rgba(238, 242, 247, 0.5);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Variable remap — dark (navy composition, not in the original)               */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="sapphire"] [data-md-color-scheme="slate"] {
+  --nb-black: #e8eef7;
+  --nb-charcoal: #d7e0ec;
+  --nb-text: #c3cfdf;
+  --nb-muted: #93a3b8;
+  --nb-subtle: #7a8aa0;
+
+  --nb-ubs-red: #2dd4bf;
+  --nb-ubs-red-dark: #5eead4;
+  --nb-ubs-red-deep: #91b0ff;
+  --nb-ubs-red-soft: rgba(45, 212, 191, 0.12);
+  --nb-ubs-red-line: rgba(145, 176, 255, 0.3);
+
+  --nb-bg: #0b1220;
+  --nb-surface: #111b2c;
+  --nb-surface-alt: #16233a;
+  --nb-line: rgba(226, 232, 240, 0.1);
+  --nb-line-strong: rgba(226, 232, 240, 0.18);
+
+  --nb-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  --nb-shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.28);
+
+  --nb-mist: #1c2a42;
+  --nb-paper: #111b2c;
+  --nb-ice: #16233a;
+  --nb-cyan: #2dd4bf;
+  --nb-cyan-soft: rgba(45, 212, 191, 0.12);
+  --nb-blue: #91b0ff;
+  --nb-navy: var(--nb-black);
+  --nb-slate: var(--nb-text);
+  --nb-steel: var(--nb-muted);
+  --nb-glow: linear-gradient(135deg, #101c30 0%, #0e1a26 45%, #0b1220 100%);
+
+  --md-primary-fg-color: #0e2233;
+  --md-primary-fg-color--light: #163349;
+  --md-primary-fg-color--dark: #081521;
+  --md-accent-fg-color: #2dd4bf;
+  --md-default-fg-color: #e2e8f0;
+  --md-default-fg-color--light: #93a3b8;
+  --md-default-bg-color: #0b1220;
+  --md-typeset-a-color: #91b0ff;
+  --md-footer-bg-color: #0a1526;
+  --md-footer-bg-color--dark: #081120;
+  --md-footer-fg-color: #dbe4f0;
+  --md-footer-fg-color--light: rgba(219, 228, 240, 0.75);
+  --md-footer-fg-color--lighter: rgba(219, 228, 240, 0.5);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Typography                                                                  */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="sapphire"] .md-typeset {
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+/* Headings: plain bold with the original's tighter tracking, no rules/ticks */
+[data-nb-theme="sapphire"] .md-typeset h1,
+[data-nb-theme="sapphire"] .md-typeset h2,
+[data-nb-theme="sapphire"] .md-typeset h3,
+[data-nb-theme="sapphire"] .hero-title {
+  letter-spacing: -0.02em;
+}
+
+[data-nb-theme="sapphire"] .md-typeset h1 {
+  border-bottom: none;
+  font-weight: 750;
+  padding-bottom: 0;
+}
+
+[data-nb-theme="sapphire"] .md-typeset h2 {
+  border-top: none;
+  font-weight: 700;
+  margin-top: 2.4rem;
+  padding-top: 0;
+}
+
+[data-nb-theme="sapphire"] .md-typeset h2::before {
+  display: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Header / tabs / search: navy→teal gradient                                  */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="sapphire"] .md-header {
+  background: linear-gradient(90deg, #10283f 0%, #173c59 55%, #0f766e 100%);
+  border-bottom: none;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+}
+
+[data-nb-theme="sapphire"] [data-md-color-scheme="slate"] .md-header {
+  background: linear-gradient(90deg, #0a1626 0%, #0f2233 55%, #0d5f58 100%);
+}
+
+[data-nb-theme="sapphire"] .md-search__form {
+  background-color: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+[data-nb-theme="sapphire"] .md-search__form:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-nb-theme="sapphire"] .md-search__input {
+  color: #ffffff;
+}
+
+[data-nb-theme="sapphire"] .md-search__input::placeholder,
+[data-nb-theme="sapphire"] .md-search__icon {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+[data-nb-theme="sapphire"] .md-tabs {
+  background: rgba(11, 34, 53, 0.92);
+  border-bottom: none;
+}
+
+[data-nb-theme="sapphire"] [data-md-color-scheme="slate"] .md-tabs {
+  background: rgba(8, 16, 28, 0.92);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Page canvas: soft radial glow                                               */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="sapphire"] .md-main {
+  background:
+    radial-gradient(circle at top right, rgba(14, 165, 233, 0.08), transparent 26%),
+    linear-gradient(180deg, #f9fbfd 0%, #f4f7fb 100%);
+}
+
+[data-nb-theme="sapphire"] [data-md-color-scheme="slate"] .md-main {
+  background:
+    radial-gradient(circle at top right, rgba(34, 211, 238, 0.07), transparent 26%),
+    linear-gradient(180deg, #0d1626 0%, #0b1220 100%);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Hero: gradient panel with the decorative circle                             */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="sapphire"] .hero-panel {
+  background: var(--nb-glow);
+  border: 1px solid rgba(29, 78, 216, 0.12);
+  border-radius: 28px;
+  box-shadow: var(--nb-shadow);
+  padding: 2.2rem;
+}
+
+[data-nb-theme="sapphire"] .hero-panel::after {
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.16), rgba(29, 78, 216, 0.08));
+  border-radius: 999px;
+  content: "";
+  display: block;
+  height: 16rem;
+  position: absolute;
+  right: -4rem;
+  top: -7rem;
+  width: 16rem;
+}
+
+[data-nb-theme="sapphire"] [data-md-color-scheme="slate"] .hero-panel {
+  border-color: rgba(145, 176, 255, 0.14);
+}
+
+[data-nb-theme="sapphire"] [data-md-color-scheme="slate"] .hero-panel::after {
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.12), rgba(145, 176, 255, 0.08));
+}
+
+/* -------------------------------------------------------------------------- */
+/* Cards: glassy, large radius, floating hover                                 */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="sapphire"] .hero-action::before,
+[data-nb-theme="sapphire"] .section-card::before,
+[data-nb-theme="sapphire"] .signal-card::before,
+[data-nb-theme="sapphire"] .mini-card::before {
+  display: none;
+}
+
+[data-nb-theme="sapphire"] .hero-action,
+[data-nb-theme="sapphire"] .section-card,
+[data-nb-theme="sapphire"] .signal-card,
+[data-nb-theme="sapphire"] .mini-card {
+  border-radius: 22px;
+  box-shadow: var(--nb-shadow);
+  padding: 1.15rem 1.2rem;
+}
+
+[data-nb-theme="sapphire"] .hero-action:hover,
+[data-nb-theme="sapphire"] .section-card:hover,
+[data-nb-theme="sapphire"] .signal-card:hover,
+[data-nb-theme="sapphire"] .mini-card:hover {
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Tables / admonitions: rounded and floating                                  */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="sapphire"] .md-typeset table:not([class]) {
+  box-shadow: var(--nb-shadow);
+}
+
+[data-nb-theme="sapphire"] .md-typeset table:not([class]) th {
+  background: #edf4fa;
+  border-bottom: none;
+  letter-spacing: 0.08em;
+}
+
+[data-nb-theme="sapphire"] [data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background: #16233a;
+}
+
+[data-nb-theme="sapphire"] .md-typeset .admonition,
+[data-nb-theme="sapphire"] .md-typeset details {
+  border: 1px solid var(--nb-line);
+  box-shadow: var(--nb-shadow);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Footer: navy, like the original's primary-colored footer                    */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="sapphire"] .md-footer {
+  background: var(--md-footer-bg-color);
+}
+
+[data-nb-theme="sapphire"] .md-footer-meta {
+  background: var(--md-footer-bg-color--dark);
+}

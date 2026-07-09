@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <!-- Apply the saved design theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem("nb-theme"); } catch (e) { /* storage blocked */ }
+      if (theme && theme !== "default") {
+        document.documentElement.setAttribute("data-nb-theme", theme);
+      }
+    })();
+  </script>
+{% endblock %}

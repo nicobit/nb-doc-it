@@ -5,10 +5,10 @@ site_dir: site
 
 theme:
   name: material
+  custom_dir: overrides
   language: en
   features:
     - navigation.tabs
-    - navigation.sections
     - navigation.indexes
     - navigation.top
     - toc.integrate
@@ -35,6 +35,13 @@ plugins:
 
 extra_css:
   - assets/stylesheets/extra.css
+  - assets/stylesheets/theme-gitbook.css
+  - assets/stylesheets/theme-docusaurus.css
+  - assets/stylesheets/theme-starlight.css
+  - assets/stylesheets/theme-sapphire.css
+
+extra_javascript:
+  - assets/javascripts/theme-switcher.js
 
 markdown_extensions:
   - admonition
@@ -50,7 +57,9 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - How-to Catalog: how-to.md
+  # How-to Catalog parked until it has articles — restore the line below once
+  # the first how-to lands (the page is still built and linked pages work).
+  # - How-to Catalog: how-to.md
   - Product:
       - Overview: product/index.md
       - Functional Specs: product/functional-specs.md
@@ -63,17 +72,24 @@ nav:
       - System Architecture: engineering/architecture.md
       - Module Registry: engineering/registry.md
       - Environments and Deployment: engineering/environments.md
-      - ADRs: engineering/adr/index.md
+      - ADRs:
+          - engineering/adr/index.md
   - QA:
       - Overview: qa/index.md
       - Strategy and Test Plans: qa/strategy.md
-      - Test Environments and Mock Data: qa/environments.md
+      - Test Data and Mocks: qa/environments.md
       - Automated Test Reports: qa/reports.md
   - Operations:
       - Overview: operations/index.md
-      - SOPs: operations/sops/index.md
-      - Runbooks: operations/runbooks/index.md
-      - Critical Incident: operations/runbooks/critical-incident.md
+      - SOPs:
+          - operations/sops/index.md
+          - Release Execution: operations/sops/release-execution.md
+          - Smoke Test Procedure: operations/sops/smoke-test.md
+          - Quarterly Access Review: operations/sops/access-review.md
+          - Support Handoff: operations/sops/support-handoff.md
+      - Runbooks:
+          - operations/runbooks/index.md
+          - Critical Incident: operations/runbooks/critical-incident.md
       - Controls: operations/controls/index.md
       - Monitoring Dashboards: operations/monitoring.md
       - Incident Management: operations/incidents.md

@@ -1,0 +1,275 @@
+/*
+ * GitBook design theme.
+ * Active only when <html data-nb-theme="gitbook"> is set by the theme
+ * switcher. Every rule is scoped under that attribute so the default
+ * (Aspire / UBS red) theme in extra.css is untouched.
+ *
+ * Look: all-white canvas, hairline borders, GitBook blue accent,
+ * pill-shaped hover on sidebar links, quiet header.
+ */
+
+/* -------------------------------------------------------------------------- */
+/* Variable remap — light                                                      */
+/* -------------------------------------------------------------------------- */
+
+html[data-nb-theme="gitbook"] {
+  --nb-black: #111827;
+  --nb-charcoal: #1f2937;
+  --nb-text: #374151;
+  --nb-muted: #6b7280;
+  --nb-subtle: #9ca3af;
+
+  /* Accent slots keep their names; values become GitBook blue */
+  --nb-ubs-red: #2b6fed;
+  --nb-ubs-red-dark: #1d54c2;
+  --nb-ubs-red-deep: #1d54c2;
+  --nb-ubs-red-soft: rgba(43, 111, 237, 0.08);
+  --nb-ubs-red-line: rgba(43, 111, 237, 0.3);
+
+  --nb-bg: #ffffff;
+  --nb-surface: #ffffff;
+  --nb-surface-alt: #f6f7f9;
+  --nb-line: rgba(17, 24, 39, 0.09);
+  --nb-line-strong: rgba(17, 24, 39, 0.16);
+
+  --nb-radius: 8px;
+  --nb-radius-lg: 10px;
+  --nb-shadow: 0 6px 20px rgba(17, 24, 39, 0.06);
+  --nb-shadow-soft: 0 3px 10px rgba(17, 24, 39, 0.05);
+
+  --nb-mist: #eef0f3;
+  --nb-paper: #ffffff;
+  --nb-ice: #f6f7f9;
+  --nb-cyan: var(--nb-ubs-red);
+  --nb-cyan-soft: var(--nb-ubs-red-soft);
+  --nb-blue: var(--nb-ubs-red-deep);
+  --nb-navy: var(--nb-black);
+  --nb-slate: var(--nb-text);
+  --nb-steel: var(--nb-muted);
+  --nb-glow: #ffffff;
+}
+
+[data-nb-theme="gitbook"] [data-md-color-scheme="default"] {
+  --md-primary-fg-color: #ffffff;
+  --md-primary-fg-color--light: #f6f7f9;
+  --md-primary-fg-color--dark: #eef0f3;
+  --md-accent-fg-color: #2b6fed;
+  --md-default-fg-color: #374151;
+  --md-default-fg-color--light: #6b7280;
+  --md-default-bg-color: #ffffff;
+  --md-typeset-a-color: #1d54c2;
+  --md-footer-bg-color: #ffffff;
+  --md-footer-bg-color--dark: #fafbfc;
+  --md-footer-fg-color: #111827;
+  --md-footer-fg-color--light: #6b7280;
+  --md-footer-fg-color--lighter: #9ca3af;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Variable remap — dark                                                       */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="gitbook"] [data-md-color-scheme="slate"] {
+  --nb-black: #f3f4f6;
+  --nb-charcoal: #e5e7eb;
+  --nb-text: #d1d5db;
+  --nb-muted: #9ca3af;
+  --nb-subtle: #7c828d;
+
+  --nb-ubs-red: #6ea8ff;
+  --nb-ubs-red-dark: #8ab8ff;
+  --nb-ubs-red-deep: #8ab8ff;
+  --nb-ubs-red-soft: rgba(110, 168, 255, 0.12);
+  --nb-ubs-red-line: rgba(110, 168, 255, 0.32);
+
+  --nb-bg: #131417;
+  --nb-surface: #1a1c21;
+  --nb-surface-alt: #202329;
+  --nb-line: rgba(243, 244, 246, 0.09);
+  --nb-line-strong: rgba(243, 244, 246, 0.16);
+
+  --nb-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --nb-shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.24);
+
+  --nb-mist: #23262d;
+  --nb-paper: #1a1c21;
+  --nb-ice: #202329;
+  --nb-cyan: var(--nb-ubs-red);
+  --nb-cyan-soft: var(--nb-ubs-red-soft);
+  --nb-blue: var(--nb-ubs-red-deep);
+  --nb-navy: var(--nb-black);
+  --nb-slate: var(--nb-text);
+  --nb-steel: var(--nb-muted);
+  --nb-glow: #1a1c21;
+
+  --md-primary-fg-color: #17181c;
+  --md-primary-fg-color--light: #202329;
+  --md-primary-fg-color--dark: #101114;
+  --md-accent-fg-color: #6ea8ff;
+  --md-default-fg-color: #e5e7eb;
+  --md-default-fg-color--light: #9ca3af;
+  --md-default-bg-color: #131417;
+  --md-typeset-a-color: #8ab8ff;
+  --md-footer-bg-color: #131417;
+  --md-footer-bg-color--dark: #101114;
+  --md-footer-fg-color: #e5e7eb;
+  --md-footer-fg-color--light: #9ca3af;
+  --md-footer-fg-color--lighter: #7c828d;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Typography                                                                  */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="gitbook"] body,
+[data-nb-theme="gitbook"] input {
+  font-family: Inter, "Segoe UI Variable", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+[data-nb-theme="gitbook"] .md-typeset {
+  font-size: 0.78rem;
+  line-height: 1.72;
+}
+
+[data-nb-theme="gitbook"] .md-typeset h1,
+[data-nb-theme="gitbook"] .md-typeset h2,
+[data-nb-theme="gitbook"] .md-typeset h3,
+[data-nb-theme="gitbook"] .hero-title {
+  font-family: Inter, "Segoe UI Variable", "Segoe UI", Roboto, Arial, sans-serif;
+  letter-spacing: -0.015em;
+}
+
+/* GitBook headings: no rules, no ticks */
+[data-nb-theme="gitbook"] .md-typeset h1 {
+  border-bottom: none;
+  font-weight: 700;
+  padding-bottom: 0;
+}
+
+[data-nb-theme="gitbook"] .md-typeset h2 {
+  border-top: none;
+  font-weight: 650;
+  padding-top: 0;
+}
+
+[data-nb-theme="gitbook"] .md-typeset h2::before {
+  display: none;
+}
+
+[data-nb-theme="gitbook"] .md-typeset a {
+  font-weight: 500;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Header / tabs / search                                                      */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="gitbook"] .md-header {
+  background: var(--nb-surface);
+  border-bottom: 1px solid var(--nb-line);
+  color: var(--nb-black);
+}
+
+[data-nb-theme="gitbook"] .md-search__form {
+  background-color: var(--nb-surface-alt);
+  border: 1px solid var(--nb-line-strong);
+  border-radius: 8px;
+}
+
+[data-nb-theme="gitbook"] .md-search__form:hover {
+  background-color: var(--nb-mist);
+}
+
+[data-nb-theme="gitbook"] .md-search__input {
+  color: var(--nb-black);
+}
+
+[data-nb-theme="gitbook"] .md-search__input::placeholder,
+[data-nb-theme="gitbook"] .md-search__icon {
+  color: var(--nb-muted);
+}
+
+[data-nb-theme="gitbook"] .md-tabs {
+  background: var(--nb-surface);
+  border-bottom: 1px solid var(--nb-line);
+}
+
+[data-nb-theme="gitbook"] .md-tabs__link {
+  color: var(--nb-muted);
+}
+
+[data-nb-theme="gitbook"] .md-tabs__link:hover,
+[data-nb-theme="gitbook"] .md-tabs__link--active,
+[data-nb-theme="gitbook"] .md-tabs__item--active .md-tabs__link {
+  color: var(--nb-black);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Sidebar: GitBook pill hover                                                 */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="gitbook"] .md-nav__link {
+  border-radius: 7px;
+  padding: 0.22rem 0.4rem;
+}
+
+[data-nb-theme="gitbook"] .md-nav__link:hover {
+  background: var(--nb-surface-alt);
+  color: var(--nb-black);
+}
+
+[data-nb-theme="gitbook"] .md-nav__link--active,
+[data-nb-theme="gitbook"] .md-nav__item--active > .md-nav__link {
+  background: var(--nb-ubs-red-soft);
+  color: var(--nb-ubs-red);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Content components                                                          */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="gitbook"] .hero-panel {
+  border-top: 1px solid var(--nb-line);
+  box-shadow: var(--nb-shadow-soft);
+}
+
+/* No accent dots on cards — GitBook keeps cards bare */
+[data-nb-theme="gitbook"] .hero-action::before,
+[data-nb-theme="gitbook"] .section-card::before,
+[data-nb-theme="gitbook"] .signal-card::before,
+[data-nb-theme="gitbook"] .mini-card::before {
+  display: none;
+}
+
+[data-nb-theme="gitbook"] .md-typeset table:not([class]) th {
+  background: var(--nb-surface-alt);
+  border-bottom: 1px solid var(--nb-line-strong);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+[data-nb-theme="gitbook"] .md-typeset code {
+  color: var(--nb-charcoal);
+}
+
+[data-nb-theme="gitbook"] .section-card em,
+[data-nb-theme="gitbook"] .hero-kicker,
+[data-nb-theme="gitbook"] .section-kicker {
+  letter-spacing: 0.1em;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Footer                                                                      */
+/* -------------------------------------------------------------------------- */
+
+[data-nb-theme="gitbook"] .md-footer {
+  background: var(--md-footer-bg-color);
+  border-top: 1px solid var(--nb-line);
+}
+
+[data-nb-theme="gitbook"] .md-footer-meta {
+  background: var(--md-footer-bg-color--dark);
+  border-top: 1px solid var(--nb-line);
+}
