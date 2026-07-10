@@ -2,13 +2,19 @@
 
 {% block extrahead %}
   {{ super() }}
-  <!-- Apply the saved design theme before first paint to avoid a flash -->
+  <!-- Apply the saved design theme and layout before first paint to avoid a flash -->
   <script>
     (function () {
-      var theme = null;
-      try { theme = localStorage.getItem("nb-theme"); } catch (e) { /* storage blocked */ }
+      var theme = null, layout = null;
+      try {
+        theme = localStorage.getItem("nb-theme");
+        layout = localStorage.getItem("nb-layout");
+      } catch (e) { /* storage blocked */ }
       if (theme && theme !== "default") {
         document.documentElement.setAttribute("data-nb-theme", theme);
+      }
+      if (layout && layout !== "default") {
+        document.documentElement.setAttribute("data-nb-layout", layout);
       }
     })();
   </script>

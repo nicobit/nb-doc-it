@@ -57,6 +57,21 @@
     try { localStorage.setItem(STORAGE_KEY, id); } catch (e) { /* storage blocked */ }
   }
 
+  var LAYOUT_KEY = "nb-layout";
+
+  function currentLayout() {
+    return document.documentElement.getAttribute("data-nb-layout") || "default";
+  }
+
+  function applyLayout(id) {
+    if (id === "default") {
+      document.documentElement.removeAttribute("data-nb-layout");
+    } else {
+      document.documentElement.setAttribute("data-nb-layout", id);
+    }
+    try { localStorage.setItem(LAYOUT_KEY, id); } catch (e) { /* storage blocked */ }
+  }
+
   function createPicker() {
     var inner = document.querySelector(".md-header__inner");
     if (!inner || inner.querySelector(".nb-theme-picker")) return;
@@ -102,18 +117,49 @@
       menu.appendChild(item);
     });
 
+    // Layout toggle below a divider: centered (default) vs wide
+    var divider = document.createElement("div");
+    divider.className = "nb-theme-picker__divider";
+    menu.appendChild(divider);
+
+    var wideItem = document.createElement("button");
+    wideItem.type = "button";
+    wideItem.className = "nb-theme-picker__item";
+    wideItem.setAttribute("role", "menuitemcheckbox");
+
+    var wideName = document.createElement("span");
+    wideName.textContent = "Wide layout";
+    wideItem.appendChild(wideName);
+
+    var wideCheck = document.createElement("span");
+    wideCheck.className = "nb-theme-picker__check";
+    wideCheck.innerHTML = ICON_CHECK;
+    wideItem.appendChild(wideCheck);
+
+    wideItem.addEventListener("click", function () {
+      applyLayout(currentLayout() === "wide" ? "default" : "wide");
+      refresh();
+      close();
+    });
+
+    menu.appendChild(wideItem);
+
     function refresh() {
       var active = currentTheme();
       var title = "Theme: " + themeLabel(active) + " — switch design theme";
       button.title = title;
       button.setAttribute("aria-label", title);
-      var items = menu.querySelectorAll(".nb-theme-picker__item");
+      var items = menu.querySelectorAll(".nb-theme-picker__item[data-theme]");
       for (var i = 0; i < items.length; i++) {
         items[i].setAttribute(
           "aria-checked",
           items[i].dataset.theme === active ? "true" : "false"
         );
       }
+      wideItem.setAttribute(
+        "aria-checked",
+        currentLayout() === "wide" ? "true" : "false"
+      );
     }
 
     function open() {

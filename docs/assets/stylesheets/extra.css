@@ -260,6 +260,31 @@ pre {
   margin-top: 1.15rem;
 }
 
+/* Optional wide layout — toggled from the header palette menu, persisted in
+   localStorage (nb-layout) and stamped pre-paint by overrides/main.html. */
+[data-nb-layout="wide"] .md-grid {
+  max-width: none;
+  padding: 0 0.6rem;
+}
+
+/* Sidebar-less pages (e.g. Home) stay centered even in wide mode. */
+[data-nb-layout="wide"] .md-sidebar--primary[hidden] ~ .md-content {
+  margin: 0 auto;
+  max-width: 61rem;
+}
+
+/* Readable measure for running text in wide mode; tables, code blocks, and
+   card grids keep the full width. */
+[data-nb-layout="wide"] .md-typeset p,
+[data-nb-layout="wide"] .md-typeset ul,
+[data-nb-layout="wide"] .md-typeset ol,
+[data-nb-layout="wide"] .md-typeset blockquote,
+[data-nb-layout="wide"] .md-typeset dl,
+[data-nb-layout="wide"] .md-typeset .admonition,
+[data-nb-layout="wide"] .md-typeset details {
+  max-width: 40rem;
+}
+
 /* Sidebar */
 .md-nav__title {
   color: var(--nb-black);
@@ -788,6 +813,11 @@ pre {
 
 .nb-theme-picker__item[aria-checked="true"] {
   color: var(--nb-ubs-red);
+}
+
+.nb-theme-picker__divider {
+  border-top: 1px solid var(--nb-line);
+  margin: 0.25rem 0.2rem;
 }
 
 .nb-theme-picker__check {
