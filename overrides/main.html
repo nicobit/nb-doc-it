@@ -13,8 +13,9 @@
       if (theme && theme !== "default") {
         document.documentElement.setAttribute("data-nb-theme", theme);
       }
-      if (layout && layout !== "default") {
-        document.documentElement.setAttribute("data-nb-layout", layout);
+      /* Wide is the default; "default" is the legacy stored name for centered */
+      if (layout === "centered" || layout === "default") {
+        document.documentElement.setAttribute("data-nb-layout", "centered");
       }
     })();
   </script>

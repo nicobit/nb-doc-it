@@ -254,35 +254,51 @@ pre {
   background: var(--nb-bg);
 }
 
-/* Layout: Material's default centered grid (max-width 61rem), matching
-   https://nicobit.github.io/brs-to-spec/ — no full-width overrides. */
 .md-content__inner {
   margin-top: 1.15rem;
 }
 
-/* Optional wide layout — toggled from the header palette menu, persisted in
-   localStorage (nb-layout) and stamped pre-paint by overrides/main.html. */
-[data-nb-layout="wide"] .md-grid {
+/* Layout: wide by default — small gutter, sidebars near the window edges.
+   The palette menu toggle sets data-nb-layout="centered" (persisted in
+   localStorage as nb-layout, stamped pre-paint by overrides/main.html) to
+   restore Material's 61rem centered grid, as on brs-to-spec. */
+.md-grid {
   max-width: none;
   padding: 0 0.6rem;
 }
 
-/* Sidebar-less pages (e.g. Home) stay centered even in wide mode. */
-[data-nb-layout="wide"] .md-sidebar--primary[hidden] ~ .md-content {
+/* Sidebar-less pages (e.g. Home) stay centered even when wide. */
+.md-sidebar--primary[hidden] ~ .md-content {
   margin: 0 auto;
   max-width: 61rem;
 }
 
 /* Readable measure for running text in wide mode; tables, code blocks, and
    card grids keep the full width. */
-[data-nb-layout="wide"] .md-typeset p,
-[data-nb-layout="wide"] .md-typeset ul,
-[data-nb-layout="wide"] .md-typeset ol,
-[data-nb-layout="wide"] .md-typeset blockquote,
-[data-nb-layout="wide"] .md-typeset dl,
-[data-nb-layout="wide"] .md-typeset .admonition,
-[data-nb-layout="wide"] .md-typeset details {
+.md-typeset p,
+.md-typeset ul,
+.md-typeset ol,
+.md-typeset blockquote,
+.md-typeset dl,
+.md-typeset .admonition,
+.md-typeset details {
   max-width: 40rem;
+}
+
+/* Centered mode: Material's default grid, no prose cap needed. */
+[data-nb-layout="centered"] .md-grid {
+  max-width: 61rem;
+  padding: 0;
+}
+
+[data-nb-layout="centered"] .md-typeset p,
+[data-nb-layout="centered"] .md-typeset ul,
+[data-nb-layout="centered"] .md-typeset ol,
+[data-nb-layout="centered"] .md-typeset blockquote,
+[data-nb-layout="centered"] .md-typeset dl,
+[data-nb-layout="centered"] .md-typeset .admonition,
+[data-nb-layout="centered"] .md-typeset details {
+  max-width: none;
 }
 
 /* Sidebar */

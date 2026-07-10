@@ -59,15 +59,18 @@
 
   var LAYOUT_KEY = "nb-layout";
 
+  /* Wide is the default (no attribute); "centered" restores the 61rem grid. */
   function currentLayout() {
-    return document.documentElement.getAttribute("data-nb-layout") || "default";
+    return document.documentElement.getAttribute("data-nb-layout") === "centered"
+      ? "centered"
+      : "wide";
   }
 
   function applyLayout(id) {
-    if (id === "default") {
-      document.documentElement.removeAttribute("data-nb-layout");
+    if (id === "centered") {
+      document.documentElement.setAttribute("data-nb-layout", "centered");
     } else {
-      document.documentElement.setAttribute("data-nb-layout", id);
+      document.documentElement.removeAttribute("data-nb-layout");
     }
     try { localStorage.setItem(LAYOUT_KEY, id); } catch (e) { /* storage blocked */ }
   }
@@ -137,7 +140,7 @@
     wideItem.appendChild(wideCheck);
 
     wideItem.addEventListener("click", function () {
-      applyLayout(currentLayout() === "wide" ? "default" : "wide");
+      applyLayout(currentLayout() === "wide" ? "centered" : "wide");
       refresh();
       close();
     });
