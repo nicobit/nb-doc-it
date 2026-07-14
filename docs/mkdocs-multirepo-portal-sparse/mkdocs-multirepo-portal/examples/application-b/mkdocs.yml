@@ -1,0 +1,8 @@
+site_name: applications/application-b
+docs_dir: docs
+
+nav:
+  - Overview: index.md
+  - Runbooks:
+      - Overview: runbooks/index.md
+      - Restart service: runbooks/restart-service.md

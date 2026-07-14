@@ -1,0 +1,43 @@
+image: python:3.12-slim
+
+stages:
+  - build
+  - deploy
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  GIT_TERMINAL_PROMPT: "0"
+
+cache:
+  paths:
+    - .cache/pip
+
+before_script:
+  - apt-get update
+  - apt-get install --yes --no-install-recommends git ca-certificates
+  - python -m pip install --upgrade pip
+  - python -m pip install -r requirements.txt
+
+build-docs:
+  stage: build
+  script:
+    - ./scripts/clone-repositories.sh
+    - ./scripts/validate-imports.sh
+    - mkdocs build --strict --site-dir public
+  artifacts:
+    paths:
+      - public
+    expire_in: 1 week
+
+pages:
+  stage: deploy
+  needs:
+    - job: build-docs
+      artifacts: true
+  script:
+    - test -f public/index.html
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'

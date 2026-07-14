@@ -1,0 +1,10 @@
+site_name: applications/application-a
+docs_dir: docs
+
+nav:
+  - Overview: index.md
+  - Architecture:
+      - Overview: architecture/index.md
+      - Context: architecture/context.md
+  - Operations:
+      - Overview: operations/index.md
