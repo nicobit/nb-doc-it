@@ -93,7 +93,6 @@ pre {
 .md-typeset {
   color: var(--nb-text);
   font-size: 0.75rem;
-  font-weight: 400;
   line-height: 1.68;
 }
 
@@ -104,12 +103,12 @@ pre {
 
 .md-typeset strong {
   color: var(--nb-black);
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .md-typeset a {
   color: var(--nb-ubs-red-deep);
-  font-weight: 400;
+  font-weight: 600;
   text-decoration-thickness: 0.07em;
   text-underline-offset: 0.18em;
 }
@@ -130,7 +129,7 @@ pre {
 .md-typeset h1 {
   border-bottom: 1px solid var(--nb-line);
   font-size: clamp(1.5rem, 2vw, 1.9rem);
-  font-weight: 400;
+  font-weight: 760;
   line-height: 1.14;
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
@@ -139,7 +138,7 @@ pre {
 .md-typeset h2 {
   border-top: 1px solid var(--nb-line);
   font-size: 1.25rem;
-  font-weight: 400;
+  font-weight: 720;
   line-height: 1.25;
   margin-top: 2.2rem;
   padding-top: 1.1rem;
@@ -158,7 +157,7 @@ pre {
 .md-typeset h3 {
   color: var(--nb-charcoal);
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 720;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -198,7 +197,7 @@ pre {
 }
 
 .md-header__title {
-  font-weight: 400;
+  font-weight: 720;
   letter-spacing: -0.01em;
 }
 
@@ -305,7 +304,7 @@ pre {
 /* Sidebar */
 .md-nav__title {
   color: var(--nb-black);
-  font-weight: 400;
+  font-weight: 720;
 }
 
 .md-nav__link {
@@ -320,7 +319,7 @@ pre {
 .md-nav__item .md-nav__link--active,
 .md-nav__item--active > .md-nav__link {
   color: var(--nb-ubs-red);
-  font-weight: 400;
+  font-weight: 720;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -352,7 +351,7 @@ pre {
 .hero-kicker {
   color: var(--nb-ubs-red);
   font-size: 0.66rem;
-  font-weight: 400;
+  font-weight: 800;
   letter-spacing: 0.16em;
   margin-bottom: 0.7rem;
   text-transform: uppercase;
@@ -361,7 +360,7 @@ pre {
 .hero-title {
   color: var(--nb-black);
   font-size: clamp(1.7rem, 2.7vw, 2.45rem);
-  font-weight: 400;
+  font-weight: 780;
   line-height: 1.12;
   margin: 0 0 1rem;
   max-width: 35ch;
@@ -445,7 +444,7 @@ pre {
   color: var(--nb-black);
   display: block;
   font-size: 0.92rem;
-  font-weight: 400;
+  font-weight: 740;
   margin-bottom: 0.35rem;
 }
 
@@ -481,7 +480,7 @@ pre {
 .section-kicker {
   color: var(--nb-ubs-red);
   font-size: 0.66rem;
-  font-weight: 400;
+  font-weight: 800;
   letter-spacing: 0.14em;
   margin-bottom: 0.25rem;
   text-transform: uppercase;
@@ -492,7 +491,7 @@ pre {
   display: inline-block;
   font-size: 0.7rem;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 800;
   letter-spacing: 0.075em;
   margin-top: 0.75rem;
   text-transform: uppercase;
@@ -529,7 +528,7 @@ pre {
   border-bottom: 2px solid var(--nb-ubs-red);
   color: var(--nb-black);
   font-size: 0.66rem;
-  font-weight: 400;
+  font-weight: 760;
   letter-spacing: 0.07em;
   text-transform: uppercase;
 }
@@ -573,7 +572,7 @@ pre {
 .md-typeset summary {
   background: var(--nb-ubs-red-soft);
   color: var(--nb-black);
-  font-weight: 400;
+  font-weight: 720;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -623,7 +622,7 @@ pre {
   border-radius: 999px;
   color: var(--nb-ubs-red-deep);
   font-size: 0.72rem;
-  font-weight: 400;
+  font-weight: 780;
   letter-spacing: 0.035em;
   padding: 0.38rem 0.7rem;
 }
@@ -658,7 +657,7 @@ pre {
 .anchor-link-list strong {
   color: var(--nb-black);
   display: block;
-  font-weight: 400;
+  font-weight: 740;
   margin-bottom: 0.15rem;
 }
 
@@ -673,7 +672,7 @@ pre {
 
 .md-typeset .md-button {
   border-radius: 8px;
-  font-weight: 400;
+  font-weight: 720;
 }
 
 /* Button text uses --nb-paper (white in light schemes, near-black in dark
@@ -773,7 +772,7 @@ pre {
   display: flex;
   font: inherit;
   font-size: 0.65rem;
-  font-weight: 400;
+  font-weight: 650;
   gap: 0.3rem;
   padding: 0.28rem 0.45rem;
 }
@@ -815,7 +814,7 @@ pre {
   display: flex;
   font: inherit;
   font-size: 0.66rem;
-  font-weight: 400;
+  font-weight: 600;
   gap: 0.6rem;
   justify-content: space-between;
   padding: 0.38rem 0.55rem;
